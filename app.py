@@ -30,12 +30,12 @@ app = Flask(__name__)
 def welcome():
     """List all available api routes."""
     return (
-        f"Available Routes:<br/>"
-        f"/api/v1.0/precipitation<br/>"
-        f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start> <br/>"
-        f"/api/v1.0/start/<end> <br/>"
+        "Available Routes:<br/>"
+        "/api/v1.0/precipitation<br/>"
+        "/api/v1.0/stations<br/>"
+        "/api/v1.0/tobs<br/>"
+        "/api/v1.0/start<br/>"
+        "/api/v1.0/start/end<br/>"
     )
 
 @app.route("/api/v1.0/precipitation")
@@ -97,5 +97,36 @@ def names():
 
     return jsonify(all_temps)
 
-if __name__ == '__main__':
+@app.route("/api/v1.0/<start>")
+def summary(start):
+     # Create our session (link) from Python to the DB
+    session = Session(engine)
+    
+    # Query temp data for min, max and avg for start date
+    start_summary = session.query(measurement.station,func.min(measurement.tobs),func.max(measurement.tobs),func.avg(measurement.tobs)).filter(measurement.date>=start).all()   
+    session.close()
+    
+    return jsonify(temps = list(np.ravel(start_summary)))
+     
+@app.route("/api/v1.0/<start>/<end>")
+def summary_range(end):
+     # Create our session (link) from Python to the DB
+    session = Session(engine)
+    
+    # Query temp data for min, max and avg for start date to end date
+    end_summary = session.query(measurement.station,func.min(measurement.tobs),func.max(measurement.tobs),func.avg(measurement.tobs)).filter(end<measurement.date>=start).all()   
+    session.close()
+    
+     # Create a dictionary from the row data and append to temp data
+    all_summary = []
+    for station, date, tobs in end_summary:
+        sum_dict = {}
+        sum_dict["Date"] = date
+        sum_dict["tobs"] = tobs
+        sum_dict["station"] = station
+        all_summary.append(sum_dict)
+
+    return jsonify(all_summary)
+        
+if __name__ == "__main__":
     app.run(debug=True)
