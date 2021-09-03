@@ -109,21 +109,22 @@ def summary(start):
     return jsonify(temps = list(np.ravel(start_summary)))
      
 @app.route("/api/v1.0/<start>/<end>")
-def summary_range(end):
+def summary_range(start,end):
      # Create our session (link) from Python to the DB
     session = Session(engine)
     
     # Query temp data for min, max and avg for start date to end date
-    end_summary = session.query(measurement.station,func.min(measurement.tobs),func.max(measurement.tobs),func.avg(measurement.tobs)).filter(end<measurement.date>=start).all()   
+    end_summary = session.query(measurement.station,func.min(measurement.tobs),func.max(measurement.tobs),func.avg(measurement.tobs)).filter(measurement.date.between(start, end)).all()     
     session.close()
     
-     # Create a dictionary from the row data and append to temp data
+     # Create a dictionary for temp data for min, max and avg for start date to end date
     all_summary = []
-    for station, date, tobs in end_summary:
+    for station, min_tobs, max_tobs, avg_tobs in end_summary:
         sum_dict = {}
-        sum_dict["Date"] = date
-        sum_dict["tobs"] = tobs
-        sum_dict["station"] = station
+        sum_dict["Max Temp"] = max_tobs
+        sum_dict["Min Temp"] = min_tobs
+        sum_dict["Avg Temp"] = avg_tobs
+        sum_dict["Station"] = station
         all_summary.append(sum_dict)
 
     return jsonify(all_summary)
