@@ -1,5 +1,3 @@
-# sqlalchemy-challenge
-
 ## Climate Analysis and Exploration
 
 * Used climate_starter.ipynb and hawaii.sqlite(Resources/hawaii.sqlite) files to complete a climate analysis and data exploration.
