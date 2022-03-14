@@ -1,3 +1,6 @@
+Goals - Weather Station Analysis answers the question, when is the best time to vacation in Hawaii with optimal weather. Observes weather station data for precipitation, date, minimum temperature, maximum temperature and average temperature.  
+
+
 ## Climate Analysis and Exploration
 
 * Used climate_starter.ipynb and hawaii.sqlite(Resources/hawaii.sqlite) files to complete a climate analysis and data exploration.
