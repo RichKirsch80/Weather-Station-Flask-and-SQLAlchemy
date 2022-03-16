@@ -48,6 +48,9 @@ Goals - Weather Station Analysis answers the question, when is the best time to 
 * Designed a query to retrieve the last 12 months of temperature observation data (TOBS).
   * Filtered by the station with the highest number of observations.
   * Queried the last 12 months of temperature observation data for this station.
+
+![image](https://user-images.githubusercontent.com/85321602/158705656-e3c03675-dd80-41ec-9c55-f838b9f6a3f2.png)
+
   * Plotted the results as a histogram with `bins=12`.
 
 ## Step 2 - Climate App
