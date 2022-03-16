@@ -23,6 +23,8 @@ Goals - Weather Station Analysis answers the question, when is the best time to 
 * Plotted the results using the DataFrame `plot` method.
 * Used Pandas to print the summary statistics for the precipitation data.
 
+![image](https://user-images.githubusercontent.com/85321602/158704713-98d93b5d-72db-4608-bf9f-6fe3344fbbf7.png)
+
 ### Station Analysis
 
 * Designed a query to calculate the total number of stations in the dataset.
