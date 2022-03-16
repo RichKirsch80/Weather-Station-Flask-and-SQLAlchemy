@@ -53,6 +53,8 @@ Goals - Weather Station Analysis answers the question, when is the best time to 
 
   * Plotted the results as a histogram with `bins=12`.
 
+![image](https://user-images.githubusercontent.com/85321602/158705767-be0fc616-637a-43c6-897a-7d936c8c2047.png)
+
 ## Step 2 - Climate App
 
 Designed a Flask API based on the queries that were just developed.
