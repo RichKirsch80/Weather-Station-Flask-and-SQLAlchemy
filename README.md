@@ -8,6 +8,8 @@ Goals - Weather Station Analysis answers the question, when is the best time to 
 * Used SQLAlchemy `automap_base()` to reflect the tables into classes and save a reference to those classes called `Station` and `Measurement`.
 * Linked Python to the database by creating an SQLAlchemy session.
 
+![image](https://user-images.githubusercontent.com/85321602/158704088-a7f27bac-4469-4bb0-903b-64dcfa8913a7.png)
+
 ### Precipitation Analysis
 
 * Found the most recent date in the data set.
