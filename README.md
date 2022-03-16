@@ -28,8 +28,18 @@ Goals - Weather Station Analysis answers the question, when is the best time to 
 ### Station Analysis
 
 * Designed a query to calculate the total number of stations in the dataset.
+
+![image](https://user-images.githubusercontent.com/85321602/158704909-19239095-4670-42b1-a67e-17aa9393fc9d.png)
+
+
 * Designed a query to find the most active stations
+
+![image](https://user-images.githubusercontent.com/85321602/158704961-1ff2461f-803d-42e0-a54a-1b82c5ea373e.png)
+
   * Listed the stations and observation counts in descending order.
+
+![image](https://user-images.githubusercontent.com/85321602/158704976-dcfa317c-3551-4136-9f5f-0ac9930cb68f.png)
+
   * Found which station id has the highest number of observations.
   * Used the most active station id, calculate the lowest, highest, and average temperature.
 
