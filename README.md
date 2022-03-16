@@ -17,6 +17,9 @@ Goals - Weather Station Analysis answers the question, when is the best time to 
 * Selected only the `date` and `prcp` values.
 * Loaded the query results into a Pandas DataFrame and set the index to the date column.
 * Sorted the DataFrame values by `date`.
+
+![image](https://user-images.githubusercontent.com/85321602/158704382-183dfdd0-83cc-4250-9e22-9e7ba06fde48.png)
+
 * Plotted the results using the DataFrame `plot` method.
 * Used Pandas to print the summary statistics for the precipitation data.
 
