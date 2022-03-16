@@ -33,15 +33,17 @@ Goals - Weather Station Analysis answers the question, when is the best time to 
 
 
 * Designed a query to find the most active stations
-
+* Listed the stations and observation counts in descending order.
+* 
 ![image](https://user-images.githubusercontent.com/85321602/158704961-1ff2461f-803d-42e0-a54a-1b82c5ea373e.png)
 
-  * Listed the stations and observation counts in descending order.
-
+  
+* Found which station id has the highest number of observations.
+* Used the most active station id, calculate the lowest, highest, and average temperature.
+  
 ![image](https://user-images.githubusercontent.com/85321602/158704976-dcfa317c-3551-4136-9f5f-0ac9930cb68f.png)
 
-  * Found which station id has the highest number of observations.
-  * Used the most active station id, calculate the lowest, highest, and average temperature.
+  
 
 * Designed a query to retrieve the last 12 months of temperature observation data (TOBS).
   * Filtered by the station with the highest number of observations.
